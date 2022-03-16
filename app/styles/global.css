@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  color: rgb(245, 245, 245);
+  font-family: inherit;
+
+  /* outline: 1px solid red; */
+}
+
+html {
+  height: -webkit-fill-available;
+  height: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 0.8rem;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+
+  margin: 0;
+  background-color: rgb(18, 18, 18);
+
+  min-height: 100%;
+
+  display: flex;
+}
+
+.inner-container {
+  padding: 2rem 1.5rem;
+  background-color: rgb(18, 18, 18);
+}
+
+.inner-container .elapsed {
+  margin: 1em 0 0 0;
+}
+.inner-container .end-message {
+  margin: 0.25em 0;
+}
+
+.index-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 32rem;
+}
+
+.index-container-inner {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1em;
+}
+header a {
+  text-decoration: none;
+}
+header h1 {
+  margin: 0;
+}
+header .back {
+  /* margin-right: 1rem; */
+  background-color: transparent;
+  border: none;
+}
+header .title {
+  flex-grow: 1;
+}
+header .settings {
+  margin-left: 1rem;
+}
+
+header button {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(245, 245, 245);
+  background-color: transparent;
+  border-radius: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.7em;
+}
+
+.outlet-container {
+  width: 100%;
+  flex-grow: 1;
+
+  display: flex;
+  background-color: rgb(18, 18, 18);
+}
+
+footer {
+  width: 100%;
+  font-size: 0.8em;
+
+  display: flex;
+  justify-content: center;
+}
+footer p {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer img {
+  height: 1em;
+  margin: 0 0.5rem;
+  border-radius: 2px;
+}
+
+.privacy-container {
+  width: 100%;
+  padding: 0 2rem;
+  font-size: 0.8em;
+}

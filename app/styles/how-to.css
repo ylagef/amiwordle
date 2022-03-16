@@ -1,0 +1,72 @@
+.how-to {
+  padding: 0 2rem;
+  /* position: relative; */
+}
+
+.how-to .yellow {
+  background-color: rgb(222, 201, 83);
+}
+.how-to .green {
+  background-color: rgb(76, 199, 76);
+}
+.how-to .grey {
+  background-color: rgb(60, 60, 60);
+}
+.how-to span {
+  font-weight: bold;
+  padding: 0.1em 0.5em;
+  border-radius: 0.5em;
+}
+.how-to p {
+  text-align: justify;
+  line-height: 1.75em;
+}
+.how-to section {
+  padding: 0.75rem 0;
+}
+
+.lets-play a {
+  color: rgb(18, 18, 18);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: rgb(245, 245, 245);
+  opacity: 0.9;
+}
+.lets-play-top {
+  position: absolute;
+  top: 1.75rem;
+  right: 1rem;
+}
+.lets-play-bottom {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lets-play-bottom a {
+  font-size: 2.5rem;
+}
+
+.starting-accepts-container {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.starting-accepts-container small {
+  font-size: 0.7em;
+}
+
+.original-idea {
+  padding: 2em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.original-idea small {
+  font-size: 0.8em;
+  text-align: center;
+}

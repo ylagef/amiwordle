@@ -1,0 +1,81 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.container form {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container form label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container form label input {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(245, 245, 245);
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  width: 15rem;
+  letter-spacing: 0.5rem;
+  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+}
+.container form label input.error {
+  color: rgb(237, 74, 74);
+  border-bottom: 2px solid rgb(237, 74, 74);
+}
+.container form label input:focus-visible {
+  outline: none;
+}
+.container form label .error-container {
+  min-height: 1rem;
+  margin-top: 0.5em;
+}
+.container form label .error-container span {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: rgb(237, 74, 74);
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.container button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border: 1px solid rgb(245, 245, 245);
+  background-color: transparent;
+  border-radius: 1rem;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container button:hover {
+  transition: all 0.3s ease-in-out;
+  color: rgb(18, 18, 18);
+  background-color: rgb(245, 245, 245);
+}

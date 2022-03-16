@@ -1,0 +1,46 @@
+.share-container {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid rgb(245, 245, 245);
+  border-bottom: 1px solid rgb(245, 245, 245);
+  background-color: rgb(18, 18, 18);
+}
+
+.share-container .results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 2rem;
+}
+.share-container .results-container p {
+  margin: 0.2em 0;
+  font-size: 1.2em;
+}
+.share-container .results-container h4 {
+  margin: 0.2em 0;
+}
+.share-container .share-buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5em;
+}
+.share-container .share-buttons-container button {
+  margin: 0;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+}
+
+.share-container .share-with-friends {
+  display: flex;
+  justify-content: center;
+
+  margin: 0 0 1rem 0;
+}
+
+#display-on-screenshot {
+  display: none;
+}

@@ -1,0 +1,191 @@
+.buttons-container {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+}
+
+.buttons-container button {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(245, 245, 245);
+  background-color: transparent;
+  border-radius: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+
+  font-size: 0.7em;
+}
+.buttons-container button:hover {
+  transition: all 0.3s ease-in-out;
+  color: rgb(18, 18, 18);
+  background-color: rgb(245, 245, 245);
+}
+
+.game-container {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+}
+.board-container .board-row {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.board-container .box {
+  height: 15vw;
+  max-height: 8vh;
+  width: 15vw;
+  max-width: 8vh;
+
+  border: 1px solid grey;
+  border-radius: 0.25rem;
+  margin: 0.15rem;
+  padding: 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.3s ease-in-out, border-color, 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.board-container .board-row.selected-row .box {
+  height: 17vw;
+  max-height: 9vh;
+  width: 17vw;
+  max-width: 9vh;
+  font-size: 1.3em;
+}
+.board-container .box.box-correct {
+  background-color: rgb(76, 199, 76);
+  border: 1px solid rgb(76, 199, 76);
+}
+.board-container .box.box-included {
+  background-color: rgb(222, 201, 83);
+  border: 1px solid rgb(222, 201, 83);
+}
+.board-container .box.box-not-included {
+  background-color: rgb(60, 60, 60);
+  border: 1px solid rgb(60, 60, 60);
+}
+
+.messages-container {
+  height: 1rem;
+  padding: 0.25rem;
+  margin-top: 0.5rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.messages-container .message {
+  font-size: 0.8em;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.keyboard-container {
+  width: 100%;
+  padding: 0.75rem;
+
+  display: flex;
+  flex-direction: column;
+}
+.keyboard-container .keyboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25em;
+}
+.keyboard-container .keyboard-row + .keyboard-row {
+  margin-top: 0.25em;
+}
+.keyboard-container .key {
+  flex-grow: 1;
+  border: none;
+  background-color: gray;
+  border-radius: 0.5rem;
+  padding: 1em 0.5em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+.keyboard-container .key.key-correct {
+  background-color: rgb(76, 199, 76);
+  border: 1px solid rgb(76, 199, 76);
+}
+.keyboard-container .key.key-included {
+  background-color: rgb(222, 201, 83);
+  border: 1px solid rgb(222, 201, 83);
+}
+.keyboard-container .key.key-not-included {
+  background-color: rgb(60, 60, 60);
+  border: 1px solid rgb(60, 60, 60);
+  cursor: not-allowed;
+}
+.keyboard-container .key > p {
+  min-width: 1em;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-height: 650px) {
+  /* .board-container .box {
+  height: 15vw;
+  max-height: 8vh;
+  width: 15vw;
+  max-width: 8vh;
+  } */
+  /* .board-container .board-row.selected-row .box {
+  height: 17vw;
+  max-height: 9vh;
+  width: 17vw;
+  max-width: 9vh;
+  font-size: 1.2em;
+} */
+
+  .board-container .box {
+    height: 13vw;
+    max-height: 6vh;
+    width: 13vw;
+    max-width: 6vh;
+  }
+  .board-container .board-row.selected-row .box {
+    height: 15vw;
+    max-height: 7vh;
+    width: 15vw;
+    max-width: 7vh;
+    font-size: 1.1em;
+  }
+}
