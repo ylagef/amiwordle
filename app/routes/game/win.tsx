@@ -1,12 +1,10 @@
-import { MetaFunction, useNavigate } from "remix";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { MetaFunction, useNavigate } from "remix";
+import { BoxType, STATES } from "~/components/game";
+import Share from "~/components/share";
 import styles from "~/styles/end-game.css";
 import { formatElapsedTime, resetGame } from "~/utils";
-import { BoxType, STATES } from "~/components/game";
-
-import Share from "~/components/share";
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
 
@@ -44,9 +42,7 @@ export default function GameOver() {
       localStorage.getItem("end-time") || "0"
     );
 
-    setElapsedTime(
-      new Date(localStorageEndTime - localStorageStartTime - 1000 * 60 * 60)
-    );
+    setElapsedTime(new Date(localStorageEndTime - localStorageStartTime));
   }, []);
 
   return (

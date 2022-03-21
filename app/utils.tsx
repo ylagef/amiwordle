@@ -14,9 +14,12 @@ export const getTwoDigit = (number: number) => {
 };
 
 export const formatElapsedTime = (elapsedTime: Date) => {
-  const hours = elapsedTime.getHours();
-  const minutes = elapsedTime.getMinutes();
-  const seconds = elapsedTime.getSeconds();
+  const auxDate = new Date(
+    elapsedTime.getTime() + new Date().getTimezoneOffset() * 60000
+  );
+  const hours = auxDate.getHours();
+  const minutes = auxDate.getMinutes();
+  const seconds = auxDate.getSeconds();
 
   return `${hours > 0 ? `${getTwoDigit(hours)}h ` : ""}${getTwoDigit(
     minutes

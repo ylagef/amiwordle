@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import styles from "~/styles/game.css";
-import dict from "~/static/dict/dict.js";
 import { useNavigate } from "remix";
+import dict from "~/static/dict/dict.js";
+import styles from "~/styles/game.css";
 import { formatElapsedTime, resetGame } from "~/utils";
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
@@ -87,9 +87,7 @@ export default function Game({ initialWord }: { initialWord?: string }) {
 
     const interval = setInterval(() => {
       if (!ended) {
-        setElapsedTime(
-          new Date(new Date().getTime() - startTime - 1000 * 60 * 60)
-        );
+        setElapsedTime(new Date(new Date().getTime() - startTime));
       } else {
         clearInterval(interval);
       }
@@ -177,7 +175,7 @@ export default function Game({ initialWord }: { initialWord?: string }) {
       const endInt = parseInt(localStorageEndTime);
       const startInt = parseInt(localStorage.getItem("start-time") || "0");
 
-      setElapsedTime(new Date(endInt - startInt - 1000 * 60 * 60));
+      setElapsedTime(new Date(endInt - startInt));
     }
 
     const localSurrendered = localStorage.getItem("surrendered");
