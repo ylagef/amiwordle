@@ -236,7 +236,6 @@ export default function Game({ initialWord }: { initialWord?: string }) {
       (usedLetter) => usedLetter.letter === letter
     );
 
-    // TODO enable keyboard in dev
     if (
       !usedLetter ||
       (usedLetter && usedLetter.state !== STATES.NOT_INCLUDED)
@@ -276,31 +275,39 @@ export default function Game({ initialWord }: { initialWord?: string }) {
 
     boardWordArray.forEach((box: BoxType, index: number) => {
       let state: string;
+      const allCorrect =
+        guessWordArray.includes(box.letter) &&
+        guessWordArray.every((gwLetter, index) => {
+          if (gwLetter !== box.letter) {
+            return true;
+          }
+
+          return gwLetter === boardWordArray[index].letter;
+        });
 
       if (box.letter === guessWordArray[index]) {
         state = STATES.CORRECT;
-      } else if (guessWordArray.includes(box.letter)) {
+      } else if (guessWordArray.includes(box.letter) && !allCorrect) {
         state = STATES.INCLUDED;
       } else {
         state = STATES.NOT_INCLUDED;
       }
 
-      const usedLetter = usedLetters.find(
-        (letter) => letter.letter === box.letter
-      );
+      setUsedLetters((prev) => {
+        const usedLetter = prev.find((letter) => letter.letter === box.letter);
 
-      if (!usedLetter) {
-        setUsedLetters((prev) => [...prev, { letter: box.letter, state }]);
-      } else if (usedLetter && usedLetter.state !== STATES.CORRECT) {
-        setUsedLetters((prev) => {
+        if (!usedLetter) {
+          return [...prev, { letter: box.letter, state }];
+        } else if (usedLetter && usedLetter.state !== STATES.CORRECT) {
           const newUsedLetters = [...prev];
           newUsedLetters.find(
             (usedLetter) => usedLetter.letter === box.letter
           )!.state = state;
 
           return newUsedLetters;
-        });
-      }
+        }
+        return [...prev];
+      });
 
       box.state = state;
     });
@@ -325,7 +332,7 @@ export default function Game({ initialWord }: { initialWord?: string }) {
 
     setUsedLetters((prev) => {
       const ul = guessWordArray.map((letter: string) => ({
-        letter: letter,
+        letter,
         state: STATES.CORRECT,
       }));
 
