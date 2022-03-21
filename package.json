@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "wordle",
+  "name": "amiwordle",
   "description": "",
   "license": "",
   "scripts": {
